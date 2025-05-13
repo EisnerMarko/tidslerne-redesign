@@ -4,7 +4,6 @@
 
         
 
-
         <?php endwhile; ?>
     <?php endif; ?>
 <?php get_footer(); ?>

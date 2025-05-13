@@ -1,0 +1,1 @@
+[13-May-2025 08:05:54 UTC] PHP Warning:  Attempt to read property "title" on null in C:\Users\MAA\Local Sites\tidslerne-redesign\app\public\wp-includes\class-wp-customize-widgets.php on line 926

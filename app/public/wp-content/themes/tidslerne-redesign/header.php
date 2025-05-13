@@ -30,7 +30,18 @@
           <ul class="flex flex-col mt-4">
             <li class="px-4 py-2 text-xl font-bold">Tidslerne</li>
             <li class="px-4 py-2 text-xl font-bold">Behandlinger</li>
-            <li class="px-4 py-2 text-xl font-bold">Kost &amp; krop</li>
+            <li class="px-4 py-2 text-xl font-bold">Kost & krop</li>
+            <li class="relative">
+              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-[#9B2D5C] text-white flex justify-between items-center">
+                Arrangementer
+                <span class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+              </button>
+              <ul id="dropdown-menu" class="hidden flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-4 py-2 text-sm">subcategory1</li>
+                <li class="px-4 py-2 text-sm">subcategory2</li>
+              </ul>
+            </li>
+            <li class="px-4 py-2 text-xl font-bold">Info</li>
           </ul>
       </nav>
 

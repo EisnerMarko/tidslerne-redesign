@@ -14,34 +14,100 @@
   <div class="">
     <header class="w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12 mt-2">
 
-      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
-        <span id="menu-icon" class="iconify text-black text-4xl" data-icon="mdi:menu"></span>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="side-menu">
+        <span class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:menu"></span>
       </button>
 
-      <nav id="mobile-menu" class="absolute top-0 left-0 w-1/5 h-full bg-white z-50">
+      <nav id="side-menu" class="absolute top-0 left-0 w-93 h-full bg-white z-50 hidden transform -translate-x-full transition-transform duration-300">
           <div class="flex items-center justify-between px-4 py-4">
+
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">
               <img src="<?php echo esc_url(get_template_directory_uri() . '/css/img/tidslerne_logo.png'); ?>" alt="Tidslerne Logo" class="h-8 w-auto">
             </a>
-            <button id="menu-close" class="text-black text-4xl">
+
+            <button id="menu-close" class="text-black text-4xl cursor-pointer">
               <span class="iconify" data-icon="mdi:close"></span>
             </button>
+
           </div>
+          
           <ul class="flex flex-col mt-4">
-            <li class="px-4 py-2 text-xl font-bold">Tidslerne</li>
-            <li class="px-4 py-2 text-xl font-bold">Behandlinger</li>
-            <li class="px-4 py-2 text-xl font-bold">Kost & krop</li>
+
             <li class="relative">
-              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-[#9B2D5C] text-white flex justify-between items-center">
-                Arrangementer
-                <span class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
+                Tidslerne
+                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
               </button>
-              <ul id="dropdown-menu" class="hidden flex flex-col bg-[#9B2D5C] text-white">
-                <li class="px-4 py-2 text-sm">subcategory1</li>
-                <li class="px-4 py-2 text-sm">subcategory2</li>
+              <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                </li>
               </ul>
             </li>
-            <li class="px-4 py-2 text-xl font-bold">Info</li>
+
+            <li class="relative">
+              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
+                Behandlinger
+                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+              </button>
+              <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="relative">
+              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
+                Kost & krop
+                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+              </button>
+              <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="relative">
+              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
+                Arrangementer
+                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+              </button>
+              <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="relative">
+              <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
+                Info
+                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+              </button>
+              <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                </li>
+              </ul>
+            </li>
+
           </ul>
       </nav>
 
@@ -51,13 +117,13 @@
       </a>
 
       <a href="<?php echo esc_url(home_url('/')); ?>">
-        <button class="h-8 w-24 sm:w-36 bg-[#9B2D5C] rounded-lg flex items-center justify-center text-white text-sm font-bold">
+        <button class="h-8 w-24 sm:w-36 bg-[#9B2D5C] rounded-lg flex items-center justify-center text-white text-sm font-bold cursor-pointer">
           Log In
         </button>
       </a>
 
       <button id="">
-        <span id="" class="iconify text-black text-4xl" data-icon="mdi:search"></span>
+        <span id="" class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:search"></span>
       </button>
 
     </header>

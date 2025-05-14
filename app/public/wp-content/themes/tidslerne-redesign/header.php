@@ -12,7 +12,7 @@
 </head>
 <body <?php body_class(); ?> class="w-full h-full">
   <div class="">
-    <header class="w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12 mt-2">
+    <header class="w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12">
 
       <button id="menu-toggle" aria-expanded="false" aria-controls="side-menu">
         <span class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:menu"></span>
@@ -36,7 +36,7 @@
             <li class="relative">
               <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
                 Tidslerne
-                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+                <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
@@ -51,7 +51,7 @@
             <li class="relative">
               <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
                 Behandlinger
-                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+                <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
@@ -66,7 +66,7 @@
             <li class="relative">
               <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
                 Kost & krop
-                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+                <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
@@ -81,7 +81,7 @@
             <li class="relative">
               <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
                 Arrangementer
-                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+                <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
@@ -96,7 +96,7 @@
             <li class="relative">
               <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
                 Info
-                <span id="dropdown-arrow" class="iconify text-white text-lg" data-icon="mdi:chevron-down"></span>
+                <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">

@@ -3,9 +3,15 @@
         <div class="container mx-auto px-4 py-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php
+            $category = get_queried_object();
+            $category_slug = '';
+            if ($category && property_exists($category, 'slug')) {
+                $category_slug = $category->slug;
+            }
+
             $args = array(
-              'posts_per_page' => 3,
-              'category_name' => '', // replace
+              'posts_per_page' => 12,
+              'category_name' => $category_slug,
               'orderby' => 'date',
               'order' => 'desc'
             );

@@ -3,15 +3,30 @@
         <?php
         $all_categories = get_categories();
         $current_category = get_queried_object();
-        $current_order = isset($_GET['order']) && $_GET['order'] === 'asc' ? 'asc' : 'desc';
 
-        // Use selected category from dropdown if set, otherwise use current category
+        $order = 'desc';
+        if (isset($_GET['order'])) {
+          $order = $_GET['order'] === 'asc' ? 'asc' : 'desc';
+          // Redirect to clean URL after applying order
+          $redirect_url = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
+          header("Location: $redirect_url");
+          exit;
+        } elseif (isset($_COOKIE['order'])) {
+          $order = $_COOKIE['order'] === 'asc' ? 'asc' : 'desc';
+        }
+        ?>
+        <script>
+          // Always sync localStorage to cookie for PHP fallback
+          document.cookie = "order=" + (localStorage.getItem('order') || 'desc') + "; path=/";
+        </script>
+
+        <?php
         $selected_cat_slug = isset($_GET['cat']) && $_GET['cat'] ? sanitize_text_field($_GET['cat']) : ($current_category && property_exists($current_category, 'slug') ? $current_category->slug : '');
 
         $args = array(
           'posts_per_page' => 12,
           'orderby' => 'date',
-          'order' => $current_order,
+          'order' => $order,
         );
 
         if ($selected_cat_slug) {
@@ -22,13 +37,14 @@
         ?>
         <div class="flex flex-col sm:flex-row gap-6 container mx-auto px-4 pt-8 mb-8">
           <!-- Categories Dropdown -->
-          <form method="get" class="flex items-center">
+          <div class="flex items-center">
             <label class="sr-only" for="cat-select">Categories</label>
             <div class="relative">
-              <select id="cat-select" name="cat" onchange="this.form.submit()"
-                class="appearance-none border border-gray-300 px-6 py-3 bg-transparent text-black text-base pr-10 focus:outline-none focus:ring-2 focus:ring-[#9B2D5C] min-w-56 cursor-pointer">
+              <select id="cat-select"
+                class="appearance-none border border-gray-300 px-6 py-3 bg-transparent text-black text-base pr-10 focus:outline-none focus:ring-2 focus:ring-[#9B2D5C] min-w-56 cursor-pointer"
+                onchange="if(this.value) window.location.href=this.value;">
                 <?php foreach ($all_categories as $cat): ?>
-                  <option value="<?php echo esc_attr($cat->slug); ?>" <?php if ($current_category && $current_category->slug === $cat->slug) echo 'selected'; ?>>
+                  <option value="<?php echo esc_url(get_category_link($cat->term_id)); ?>" <?php if ($current_category && $current_category->term_id === $cat->term_id) echo 'selected'; ?>>
                     <?php echo esc_html($cat->name); ?>
                   </option>
                 <?php endforeach; ?>
@@ -39,27 +55,33 @@
                 </svg>
               </span>
             </div>
-            <?php if ($current_order): ?>
-              <input type="hidden" name="order" value="<?php echo esc_attr($current_order); ?>">
-            <?php endif; ?>
-          </form>
+          </div>
 
-          <!-- Order By Date Button -->
-          <form method="get" class="flex items-center">
-            <?php if ($current_category): ?>
-              <input type="hidden" name="cat" value="<?php echo esc_attr($current_category->slug); ?>">
-            <?php endif; ?>
-            <button type="submit" name="order" value="<?php echo $current_order === 'desc' ? 'asc' : 'desc'; ?>"
-              class="border border-gray-300 px-6 py-3 bg-transparent text-black text-base flex items-center gap-2 w-56 justify-between focus:outline-none focus:ring-2 focus:ring-[#9B2D5C]">
-              By Date
-              <span class="inline-block transition-transform duration-200 <?php echo $current_order === 'asc' ? 'rotate-180' : ''; ?>">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M19 9l-7 7-7-7"/>
-                </svg>
-              </span>
-            </button>
-          </form>
+          <button id="order-toggle"
+            class="border border-gray-300 px-6 py-3 rounded-none bg-white font-bold text-black text-base flex items-center gap-2 w-56 justify-between focus:outline-none focus:ring-2 focus:ring-[#9B2D5C]">
+            By Date
+            <span id="order-arrow" class="inline-block transition-transform duration-200">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+        <script>
+          // Sync JS localStorage to PHP cookie before PHP runs (for next reload)
+          document.cookie = "order=" + (localStorage.getItem('order') || 'desc') + "; path=/";
+          // Default order is 'desc'
+          let order = localStorage.getItem('order') || 'desc';
+          const btn = document.getElementById('order-toggle');
+          const arrow = document.getElementById('order-arrow');
+          if(order === 'asc') arrow.classList.add('rotate-180');
+          btn.onclick = function() {
+            order = (order === 'desc') ? 'asc' : 'desc';
+            localStorage.setItem('order', order);
+            location.reload();
+          }
+        </script>
         </div>
+
 
         <div class="container mx-auto px-4 py-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,5 +137,6 @@
             <?php endif; ?>
           </div>
         </div>
+
 
 <?php get_footer(); ?>

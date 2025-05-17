@@ -39,7 +39,7 @@
                     <?php endif; ?>
                   </a>
 
-                  <div class="p-4">
+                  <div class="py-4">
                     <h3 class="text-lg font-bold mb-2">
                       <a href="<?php the_permalink(); ?>" class="text-black hover:text-[#9B2D5C]">
                         <?php echo wp_trim_words(get_the_title(), 10, '...'); ?>

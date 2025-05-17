@@ -21,3 +21,7 @@ a, button{
   font-style: normal;
   text-decoration: none;
 }
+
+.prose p {
+  margin-bottom: 20px;
+}

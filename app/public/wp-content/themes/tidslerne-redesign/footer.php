@@ -24,6 +24,10 @@
                 7020-0515
               </li>
               <li class="flex items-center">
+                <span class="iconify mr-2 text-2xl" data-icon="material-symbols:policy"></span>
+                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('policy'))); ?>">Vedtægter</a>
+              </li>
+              <li class="flex items-center">
                 <span class="iconify mr-2 text-2xl" data-icon="mdi:email"></span>
                 <a href="mailto:sekretariat@tidslerne.dk">sekretariat@tidslerne.dk</a>
               </li>

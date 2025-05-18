@@ -100,7 +100,7 @@
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
-                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('policy'))); ?>">Vedtægter</a>
                 </li>
                 <li class="px-6 py-2 text-sm">
                   <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>

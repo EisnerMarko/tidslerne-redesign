@@ -18,7 +18,7 @@
         </div>
 
         <h1 class="text-3xl font-extrabold mb-2"><?php the_title(); ?></h1>
-        <div class="border-b border-black mb-6" style="height:1px;"></div>
+        <div class="border-b border-black mb-6"></div>
 
         <div class="prose max-w-none text-base mb-8">
             <?php the_content(); ?>

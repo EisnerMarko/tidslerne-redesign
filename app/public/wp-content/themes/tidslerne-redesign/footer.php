@@ -25,7 +25,8 @@
               </li>
               <li class="flex items-center">
                 <span class="iconify mr-2 text-2xl" data-icon="material-symbols:policy"></span>
-                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('policy'))); ?>">Vedtægter</a>
+                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('policy'))); ?>">Vedtægter,&nbsp;</a>
+                 <a href="<?php echo esc_url(get_permalink(get_page_by_path('privacy-policy'))); ?>">Privatlivspolitik</a>
               </li>
               <li class="flex items-center">
                 <span class="iconify mr-2 text-2xl" data-icon="mdi:email"></span>

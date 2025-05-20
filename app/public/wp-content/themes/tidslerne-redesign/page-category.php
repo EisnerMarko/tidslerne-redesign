@@ -127,7 +127,7 @@
                       </time>
                     </div>
 
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-black">
                       <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                     </p>
                   </div>

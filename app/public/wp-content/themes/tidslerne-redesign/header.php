@@ -96,7 +96,7 @@
               </ul>
             </li>
 
-            <li class="relative">
+            <li class="relative"> 
               <button id="dropdown-toggle" class="w-full px-4 py-2 text-xl font-bold bg-white text-black flex justify-between items-center cursor-pointer">
                 Arrangementer
                 <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>

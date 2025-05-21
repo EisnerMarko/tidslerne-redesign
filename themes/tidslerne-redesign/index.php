@@ -144,27 +144,18 @@
           </div>
         </section>
         
-        <section class="bg-[#9B2D5C] py-16 px-4">
-          <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1 mb-8 md:mb-0">
+        <section class="bg-[#9B2D5C] py-16 px-8">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-24">
+            <div class="flex-1 mb-2 md:mb-0 px-4 md:px-0">
               <h2 class="text-3xl font-bold text-black mb-6">JOIN US!</h2>
               <p class="text-lg text-black mb-6">
-                TOGETHER WE ARE PART OF A GROWING, GLOBAL MOVEMENT DETERMINED TO BRING ABOUT THE CHANGES OUR PLANET DESPERATELY NEEDS.<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates sunt voluptate alias consectetur voluptatem praesentium quae perspiciatis, sequi quidem, cumque amet porro eligendi quos dolorem fugiat quod ducimus quas incidunt!<br>
                 <span class="font-bold">SIGN UP TO RECEIVE UPDATES ON OUR CAMPAIGNS.</span>
               </p>
             </div>
-            <form action="YOUR_MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank" novalidate class="flex-1">
-              <div class="flex flex-col md:flex-row gap-4 mb-4">
-                <input type="text" name="FNAME" placeholder="First Name*" required class="w-full md:w-1/2 px-4 py-3 mb-2 md:mb-0 bg-white text-black placeholder-black focus:outline-none">
-                <input type="text" name="LNAME" placeholder="Last Name*" required class="w-full md:w-1/2 px-4 py-3 bg-white text-black placeholder-black focus:outline-none">
-              </div>
-              <input type="email" name="EMAIL" placeholder="Email*" required class="w-full px-4 py-3 mb-4 bg-white text-black placeholder-black focus:outline-none">
-              <div class="flex items-center mb-4">
-                <input type="checkbox" name="CONSENT" id="consent" required class="mr-2">
-                <label for="consent" class="text-black text-sm">I AGREE TO THE TERMS, CONDITIONS AND PRIVACY POLICY</label>
-              </div>
-              <button type="submit" class="bg-black text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-gray-800 transition">JOIN NOW</button>
-            </form>
+            <div class="flex-1">
+              <?php echo do_shortcode('[mc4wp_form id="55"]'); ?>
+            </div>
           </div>
         </section>
 

@@ -25,3 +25,28 @@ a, button{
 .prose p {
   margin-bottom: 20px;
 }
+
+.custom-checkbox {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  width: 8px;
+  height: 16px;
+  border: solid #111;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  display: block;
+}

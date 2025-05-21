@@ -43,6 +43,9 @@
               <select id="cat-select"
                 class="appearance-none border border-gray-300 px-6 py-3 bg-transparent text-black text-base pr-10 focus:outline-none focus:ring-2 focus:ring-[#9B2D5C] min-w-56 cursor-pointer"
                 onchange="if(this.value) window.location.href=this.value;">
+                <option value="<?php echo site_url('/category/'); ?>" <?php if (!$selected_cat_slug) echo 'selected'; ?>>
+                  All
+                </option>
                 <?php foreach ($all_categories as $cat): ?>
                   <option value="<?php echo esc_url(get_category_link($cat->term_id)); ?>" <?php if ($current_category && $current_category->term_id === $cat->term_id) echo 'selected'; ?>>
                     <?php echo esc_html($cat->name); ?>
@@ -67,9 +70,7 @@
             </span>
           </button>
         <script>
-          // Sync JS localStorage to PHP cookie before PHP runs (for next reload)
           document.cookie = "order=" + (localStorage.getItem('order') || 'desc') + "; path=/";
-          // Default order is 'desc'
           let order = localStorage.getItem('order') || 'desc';
           const btn = document.getElementById('order-toggle');
           const arrow = document.getElementById('order-arrow');

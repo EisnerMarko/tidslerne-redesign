@@ -7,20 +7,13 @@
         $order = 'desc';
         if (isset($_GET['order'])) {
           $order = $_GET['order'] === 'asc' ? 'asc' : 'desc';
-          // Redirect to clean URL after applying order
           $redirect_url = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
           header("Location: $redirect_url");
           exit;
         } elseif (isset($_COOKIE['order'])) {
           $order = $_COOKIE['order'] === 'asc' ? 'asc' : 'desc';
         }
-        ?>
-        <script>
-          // Always sync localStorage to cookie for PHP fallback
-          document.cookie = "order=" + (localStorage.getItem('order') || 'desc') + "; path=/";
-        </script>
 
-        <?php
         $selected_cat_slug = isset($_GET['cat']) && $_GET['cat'] ? sanitize_text_field($_GET['cat']) : ($current_category && property_exists($current_category, 'slug') ? $current_category->slug : '');
 
         $args = array(
@@ -36,7 +29,6 @@
         $query = new WP_Query($args);
         ?>
         <div class="flex flex-col sm:flex-row gap-6 container mx-auto px-4 pt-8 mb-8">
-          <!-- Categories Dropdown -->
           <div class="flex items-center">
             <label class="sr-only" for="cat-select">Categories</label>
             <div class="relative">
@@ -69,18 +61,6 @@
               </svg>
             </span>
           </button>
-        <script>
-          document.cookie = "order=" + (localStorage.getItem('order') || 'desc') + "; path=/";
-          let order = localStorage.getItem('order') || 'desc';
-          const btn = document.getElementById('order-toggle');
-          const arrow = document.getElementById('order-arrow');
-          if(order === 'asc') arrow.classList.add('rotate-180');
-          btn.onclick = function() {
-            order = (order === 'desc') ? 'asc' : 'desc';
-            localStorage.setItem('order', order);
-            location.reload();
-          }
-        </script>
         </div>
 
 

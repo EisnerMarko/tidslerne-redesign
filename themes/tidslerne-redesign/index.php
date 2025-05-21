@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-        <div class="container mx-auto px-4 py-8">
+        <section class="container mx-auto px-4 py-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php
             $args = array(
@@ -62,9 +62,9 @@
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div>
-        </div>
+        </section>
 
-        <div class="container mx-auto px-4 py-8">
+        <section class="container mx-auto px-4 py-8">
           <h2 class="text-2xl sm:text-3xl font-bold text-[#9B2D5C] mb-2">Current Events</h2>
           <div class="border-b-2 border-[#9B2D5C] mb-8"></div>
           <div class="flex flex-col gap-8">
@@ -142,6 +142,30 @@
               <p class="text-black">No events found.</p>
             <?php endif; ?>
           </div>
-        </div>
+        </section>
+        
+        <section class="bg-[#9B2D5C] py-16 px-4">
+          <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 mb-8 md:mb-0">
+              <h2 class="text-3xl font-bold text-black mb-6">JOIN US!</h2>
+              <p class="text-lg text-black mb-6">
+                TOGETHER WE ARE PART OF A GROWING, GLOBAL MOVEMENT DETERMINED TO BRING ABOUT THE CHANGES OUR PLANET DESPERATELY NEEDS.<br>
+                <span class="font-bold">SIGN UP TO RECEIVE UPDATES ON OUR CAMPAIGNS.</span>
+              </p>
+            </div>
+            <form action="YOUR_MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank" novalidate class="flex-1">
+              <div class="flex flex-col md:flex-row gap-4 mb-4">
+                <input type="text" name="FNAME" placeholder="First Name*" required class="w-full md:w-1/2 px-4 py-3 mb-2 md:mb-0 bg-white text-black placeholder-black focus:outline-none">
+                <input type="text" name="LNAME" placeholder="Last Name*" required class="w-full md:w-1/2 px-4 py-3 bg-white text-black placeholder-black focus:outline-none">
+              </div>
+              <input type="email" name="EMAIL" placeholder="Email*" required class="w-full px-4 py-3 mb-4 bg-white text-black placeholder-black focus:outline-none">
+              <div class="flex items-center mb-4">
+                <input type="checkbox" name="CONSENT" id="consent" required class="mr-2">
+                <label for="consent" class="text-black text-sm">I AGREE TO THE TERMS, CONDITIONS AND PRIVACY POLICY</label>
+              </div>
+              <button type="submit" class="bg-black text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-gray-800 transition">JOIN NOW</button>
+            </form>
+          </div>
+        </section>
 
 <?php get_footer(); ?>

@@ -7,5 +7,9 @@ function enqueue_theme_assets() {
         wp_enqueue_script('img-gallery', get_template_directory_uri() . '/js/imgGallery.js', array(), filemtime(get_template_directory() . '/js/imgGallery.js'), true);
     }
 
+    if (is_category()) {
+        wp_enqueue_script('category-filter', get_template_directory_uri() . '/js/categoryFilter.js', array(), filemtime(get_template_directory() . '/js/categoryFilter.js'), true);
+    }
+
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_assets');

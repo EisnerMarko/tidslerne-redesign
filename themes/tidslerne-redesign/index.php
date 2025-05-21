@@ -129,7 +129,6 @@
                         <?php echo wp_trim_words($event_description, 50, '...'); ?>
                       </p>
                     </div>
-                    <!-- Price & Reserve -->
                     <div class="flex flex-col items-center justify-center px-6 py-4 min-w-[120px]">
                       <div class="text-[#9B2D5C] text-lg font-bold mb-4">
                         <?php echo esc_html($event_price); ?> DKK
@@ -140,7 +139,7 @@
                 </div>
               <?php endwhile; wp_reset_postdata(); ?>
             <?php else: ?>
-              <p class="text-gray-500">No events found.</p>
+              <p class="text-black">No events found.</p>
             <?php endif; ?>
           </div>
         </div>

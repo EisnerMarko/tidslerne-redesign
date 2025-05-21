@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+a, button{
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.prose p {
+  margin-bottom: 20px;
+}

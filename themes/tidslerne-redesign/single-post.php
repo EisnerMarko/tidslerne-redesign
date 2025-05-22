@@ -23,6 +23,8 @@
         <div class="prose max-w-none text-base mb-8">
             <?php the_content(); ?>
         </div>
+
+        <?php comments_template(); ?>
     <?php endwhile; endif; ?>
 </div>
 

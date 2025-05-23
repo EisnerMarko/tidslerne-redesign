@@ -53,13 +53,18 @@
 
                     <div class="flex items-center text-sm text-green-600 mb-2">
                       <span class="iconify mr-1" data-icon="mdi:calendar"></span>
-                      <time datetime="<?php echo get_the_date('c'); ?>">
+                      <time class="mr-4" datetime="<?php echo get_the_date('c'); ?>">
                         <?php echo get_the_date(); ?>
                       </time>
+                      <span class="iconify mr-1" data-icon="uil:comment"></span>
+                        <?php
+                          $comments_count = get_comments_number();
+                          echo $comments_count;
+                        ?>
                     </div>
 
                     <p class="text-sm text-black">
-                      <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                      <?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?>
                     </p>
                   </div>
                 </div>
@@ -149,7 +154,7 @@
           </div>
         </section>
         
-        <section class="bg-[#9B2D5C] py-16 px-8">
+        <section class="bg-green-600 py-16 px-8">
           <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div class="flex-1 mb-2 md:mb-0 px-4 md:px-0">
               <h2 class="text-3xl font-bold text-white mb-6">JOIN US!</h2>

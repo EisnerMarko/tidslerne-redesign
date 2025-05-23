@@ -108,11 +108,16 @@
 
                     <div class="flex items-center text-sm text-green-600 mb-2">
                       <span class="iconify mr-1" data-icon="mdi:calendar"></span>
-                      <time datetime="<?php echo get_the_date('c'); ?>">
+                      <time class="mr-4" datetime="<?php echo get_the_date('c'); ?>">
                         <?php echo get_the_date(); ?>
                       </time>
+                      <span class="iconify mr-1" data-icon="uil:comment"></span>
+                        <?php
+                          $comments_count = get_comments_number();
+                          echo $comments_count;
+                        ?>
                     </div>
-
+                    
                     <p class="text-sm text-black">
                       <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                     </p>

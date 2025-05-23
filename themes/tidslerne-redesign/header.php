@@ -134,7 +134,7 @@
         <img src="<?php echo esc_url(get_template_directory_uri() . '/css/img/tidslerne_logo.png'); ?>" alt="Tidslerne Logo" class="h-12 w-auto">
       </a>
 
-      <a href="<?php echo esc_url(home_url('/')); ?>">
+      <a href="<?php echo is_user_logged_in() ? esc_url(home_url('/user')) : esc_url(home_url('/login')); ?>">
         <button class="h-8 w-24 sm:w-36 bg-[#9B2D5C] rounded-lg flex items-center justify-center text-white text-sm font-bold cursor-pointer hover:bg-[#7a2348] transition">
           Log In
         </button>

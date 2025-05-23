@@ -31,7 +31,7 @@
         <div class="flex flex-col sm:flex-row gap-6 container mx-auto px-4 pt-8 mb-8">
           <div class="flex items-center">
             <label class="sr-only" for="cat-select">Categories</label>
-            <div class="relative">
+            <button class="relative">
               <select id="cat-select"
                 class="appearance-none border border-gray-300 px-6 py-3 bg-transparent text-black text-base pr-10 focus:outline-none focus:ring-2 focus:ring-[#9B2D5C] min-w-56 cursor-pointer"
                 onchange="if(this.value) window.location.href=this.value;">
@@ -49,11 +49,11 @@
                   <path d="M19 9l-7 7-7-7"/>
                 </svg>
               </span>
-            </div>
+            </button>
           </div>
 
           <button id="order-toggle"
-            class="border border-gray-300 px-6 py-3 rounded-none bg-white font-bold text-black text-base flex items-center gap-2 w-56 justify-between focus:outline-none focus:ring-2 focus:ring-[#9B2D5C]">
+            class="border border-gray-300 px-6 py-3 rounded-none bg-white text-black text-base flex items-center gap-2 w-56 justify-between focus:outline-none focus:ring-2 focus:ring-[#9B2D5C]">
             By Date
             <span id="order-arrow" class="inline-block transition-transform duration-200">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -69,11 +69,16 @@
             <?php if ($query->have_posts()) : ?>
               <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="bg-white overflow-hidden">
-                    <div class="text-[#9B2D5C] text-sm font-bold uppercase px-4 py-2 border-b-2 border-[#9B2D5C] mb-2 sm:mb-4">
+                    <div class="text-[#9B2D5C] text-sm uppercase px-4 py-2 border-b-2 border-[#9B2D5C] mb-2 sm:mb-4">
                         <?php
-                            $category = get_the_category();
-                            if (!empty($category)) {
-                            echo esc_html($category[0]->name);
+                            $categories = get_the_category();
+                            if (!empty($categories)) {
+                                foreach ($categories as $index => $cat) {
+                                    echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '" class="cursor-pointer hover:text-green-600 transition-colors">' . esc_html($cat->name) . '</a>';
+                                    if ($index < count($categories) - 1) {
+                                        echo '<span class="text-[#9B2D5C]">, </span>';
+                                    }
+                                }
                             }
                         ?>
                     </div>

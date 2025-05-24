@@ -197,7 +197,7 @@
           </div>
         </section>
         
-        <section class="bg-green-600 py-16 px-8">
+        <section class="bg-[#9B2D5C] py-16 px-8">
           <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div class="flex-1 mb-2 md:mb-0 px-4 md:px-0">
               <h2 class="text-3xl font-bold text-white mb-6">JOIN US!</h2>

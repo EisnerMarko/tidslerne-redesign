@@ -8,9 +8,9 @@
             $categories = get_the_category();
             if (!empty($categories)) {
                 foreach ($categories as $index => $cat) {
-                    echo '<span class="text-green-600 font-bold text-sm uppercase">' . esc_html($cat->name) . '</span>';
+                    echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '" class="text-[#9B2D5C] font-bold text-sm uppercase cursor-pointer hover:text-green-600 transition-colors">' . esc_html($cat->name) . '</a>';
                     if ($index < count($categories) - 1) {
-                        echo '<span class="text-green-600">, </span>';
+                        echo '<span class="text-[#9B2D5C]">, </span>';
                     }
                 }
             }
@@ -18,6 +18,7 @@
         </div>
 
         <h1 class="text-3xl font-extrabold mb-2"><?php the_title(); ?></h1>
+        
         <div class="border-b border-black mb-6"></div>
 
         <div class="prose max-w-none text-base mb-8">
@@ -25,7 +26,7 @@
         </div>
 
         <?php comments_template(); ?>
-        
+
     <?php endwhile; endif; ?>
 </div>
 

@@ -1,3 +1,18 @@
+document.getElementById('search-toggle').onclick = function() {
+  document.getElementById('search-modal').classList.remove('hidden');
+};
+document.getElementById('search-close').onclick = function() {
+  document.getElementById('search-modal').classList.add('hidden');
+};
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.getElementById('search-modal').classList.add('hidden');
+});
+document.getElementById('search-modal').addEventListener('mousedown', function(e) {
+  if (e.target === this) {
+    this.classList.add('hidden');
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menu-toggle');
   const menuClose = document.getElementById('menu-close');

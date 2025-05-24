@@ -140,8 +140,20 @@
         </button>
       </a>
 
-      <button id="">
-        <span id="" class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:search"></span>
+      <button id="search-toggle" type="button">
+        <span class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:search"></span>
       </button>
+
+    <div id="search-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+      <form role="search" method="get" class="bg-white rounded-lg p-4 flex gap-2 w-full max-w-md shadow-lg"
+            action="<?php echo esc_url(home_url('/')); ?>">
+        <input type="search" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none"
+               placeholder="Søg…" value="<?php echo get_search_query(); ?>" name="s" autofocus />
+        <button type="submit" class="bg-[#9B2D5C] text-white px-4 py-2 rounded-lg font-bold hover:bg-[#7a2348] transition cursor-pointer">Søg</button>
+        <button type="button" id="search-close" class="ml-2 flex items-center justify-center text-3xl text-black hover:text-[#9B2D5C] cursor-pointer">
+          <span class="iconify" data-icon="mdi:close"></span>
+        </button>
+      </form>
+    </div>
 
     </header>

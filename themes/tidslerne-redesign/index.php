@@ -1,5 +1,48 @@
 <?php get_header(); ?>
 
+<section class="relative w-full min-h-[420px] md:min-h-[560px] flex items-center justify-center bg-white overflow-hidden">
+  <?php
+    $hero_image = get_field('hero_image');
+    $hero_headline = get_field('hero_headline');
+    $hero_subheadline = get_field('hero_subheadline');
+    $hero_button_text = get_field('hero_button_text');
+    $hero_button_link = get_field('hero_button_link');
+  ?>
+  <?php if ($hero_image): ?>
+    <img src="<?php echo esc_url($hero_image['url']); ?>"
+         alt="<?php echo esc_attr($hero_image['alt'] ?? 'Hero'); ?>"
+         class="absolute inset-0 w-full h-full object-cover object-center z-0" />
+    <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/60 to-[#9B2D5C]/40 z-10"></div>
+  <?php endif; ?>
+  <div class="relative z-20 flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto px-2 py-10 md:py-20">
+    <div class="w-full md:w-2/5 flex-shrink-0 mb-8 md:mb-0">
+      
+    </div>
+    <div class="w-full md:w-3/5 flex flex-col items-center justify-center text-center min-h-full h-full">
+      <?php if ($hero_headline): ?>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-green-600 mb-4 leading-tight">
+          <?php echo esc_html($hero_headline); ?>
+        </h1>
+      <?php endif; ?>
+      <?php if ($hero_subheadline): ?>
+        <p class="text-black text-base md:text-lg mb-4 font-bold">
+          <?php echo esc_html($hero_subheadline); ?>
+        </p>
+      <?php endif; ?>
+      <?php if ($hero_button_text && $hero_button_link): ?>
+        <a href="<?php echo esc_url($hero_button_link); ?>"
+           class="inline-block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-lg font-semibold transition text-base shadow-md">
+          <?php echo esc_html($hero_button_text); ?>
+        </a>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
+
+        <section>
+          
+        </section>
+
         <section class="container mx-auto px-4 py-8">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php

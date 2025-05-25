@@ -5,13 +5,10 @@
         $current_category = get_queried_object();
 
         $order = 'desc';
-        if (isset($_GET['order'])) {
-          $order = $_GET['order'] === 'asc' ? 'asc' : 'desc';
-          $redirect_url = preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']);
-          header("Location: $redirect_url");
-          exit;
-        } elseif (isset($_COOKIE['order'])) {
-          $order = $_COOKIE['order'] === 'asc' ? 'asc' : 'desc';
+        if (isset($_GET['order']) && $_GET['order'] === 'asc') {
+          $order = 'asc';
+        } elseif (isset($_COOKIE['order']) && $_COOKIE['order'] === 'asc') {
+          $order = 'asc';
         }
 
         $selected_cat_slug = isset($_GET['cat']) && $_GET['cat'] ? sanitize_text_field($_GET['cat']) : ($current_category && property_exists($current_category, 'slug') ? $current_category->slug : '');

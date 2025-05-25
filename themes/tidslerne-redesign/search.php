@@ -6,8 +6,16 @@
   <?php if (have_posts()) : ?>
     <ul class="space-y-8">
       <?php while (have_posts()) : the_post(); ?>
+        <?php
+          $event_headline = get_field('event_headline');
+          $event_start = get_field('event_start');
+          $event_adress = get_field('event_adress');
+          $event_link = get_field('event_link');
+          $is_event = get_post_type() === 'event' && $event_link;
+          $main_link = $is_event ? $event_link : get_permalink();
+        ?>
         <li>
-          <a href="<?php the_permalink(); ?>" class="block bg-white shadow p-6 hover:bg-gray-300 transition no-underline">
+          <a href="<?php echo esc_url($main_link); ?>" class="block bg-white shadow p-6 hover:bg-gray-300 transition no-underline" <?php if($is_event) echo 'target="_blank"'; ?>>
             <h2 class="text-2xl font-bold text-[#9B2D5C] mb-2 no-underline"><?php the_title(); ?></h2>
             <div class="text-sm text-gray-500 mb-2">
               <?php the_time('j. F Y'); ?>
@@ -28,15 +36,12 @@
               <?php the_excerpt(); ?>
             </div>
             <?php
-              $event_headline = get_field('event_headline');
               if ($event_headline) {
                 echo '<div class="text-sm text-[#9B2D5C] font-semibold mb-1">Event: ' . esc_html($event_headline) . '</div>';
               }
-              $event_start = get_field('event_start');
               if ($event_start) {
                 echo '<div class="text-xs text-gray-500 mb-1">Start: ' . esc_html($event_start) . '</div>';
               }
-              $event_adress = get_field('event_adress');
               if ($event_adress) {
                 echo '<div class="text-xs text-gray-500 mb-1">Adresse: ' . esc_html($event_adress) . '</div>';
               }

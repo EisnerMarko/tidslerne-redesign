@@ -12,7 +12,7 @@
 </head>
 <body <?php body_class(); ?> class="w-full h-full">
   <div class="">
-    <header class="fixed top-0 left-0 right-0 z-50 w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12">
+    <header class="w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12">
 
       <button id="menu-toggle" aria-expanded="false" aria-controls="side-menu">
         <span class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:menu"></span>

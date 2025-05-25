@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="relative w-full min-h-[420px] md:min-h-[560px] flex items-center justify-center bg-white overflow-hidden">
+<section class="relative w-full min-h-[420px] md:min-h-[640px] flex items-center justify-center bg-white overflow-hidden">
   <?php
     $hero_image = get_field('hero_image');
     $hero_headline = get_field('hero_headline');

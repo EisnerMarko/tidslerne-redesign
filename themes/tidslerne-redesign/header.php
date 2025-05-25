@@ -12,13 +12,13 @@
 </head>
 <body <?php body_class(); ?> class="w-full h-full">
   <div class="">
-    <header class="w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12">
 
       <button id="menu-toggle" aria-expanded="false" aria-controls="side-menu">
         <span class="iconify text-black text-4xl cursor-pointer" data-icon="mdi:menu"></span>
       </button>
 
-      <nav id="side-menu" class="absolute top-0 left-0 w-93 h-full bg-white z-50 hidden transform -translate-x-full transition-transform duration-300">
+      <nav id="side-menu" class="fixed top-0 left-0 w-93 h-full bg-white z-50 hidden transform -translate-x-full transition-transform duration-300">
           <div class="flex items-center justify-between px-4 py-4">
 
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">

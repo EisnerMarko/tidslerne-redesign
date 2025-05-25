@@ -12,7 +12,7 @@
     <img src="<?php echo esc_url($hero_image['url']); ?>"
          alt="<?php echo esc_attr($hero_image['alt'] ?? 'Hero'); ?>"
          class="absolute inset-0 w-full h-full object-cover object-center z-0" />
-    <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/60 to-[#9B2D5C]/40 z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/60 to-[#9B2D5C]/55 z-10"></div>
   <?php endif; ?>
   <div class="relative z-20 flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto px-2 py-10 md:py-20">
     <div class="w-full md:w-2/5 flex-shrink-0 mb-8 md:mb-0">

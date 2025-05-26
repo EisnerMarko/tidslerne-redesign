@@ -1,3 +1,13 @@
+window.addEventListener('load', function () {
+  const preloader = document.getElementById('preloader');
+  const mainContent = document.getElementById('main-site');
+  preloader.style.opacity = '0';
+  setTimeout(() => {
+    preloader.style.display = 'none';
+    mainContent.style.display = 'block';
+  }, 50000);
+});
+
 document.getElementById('search-toggle').onclick = function() {
   document.getElementById('search-modal').classList.remove('hidden');
 };

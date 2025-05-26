@@ -12,6 +12,12 @@
 </head>
 <body <?php body_class(); ?> class="w-full h-full">
   <div class="">
+
+    <?php
+      $front_page_id = get_option('page_on_front');
+      $hero_button_link = get_field('hero_button_link', $front_page_id);
+    ?>
+
     <header class="w-full h-16 flex items-center justify-between bg-white px-2 sm:px-4 lg:px-12">
 
       <button id="menu-toggle" aria-expanded="false" aria-controls="side-menu">
@@ -40,10 +46,13 @@
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
-                  <a href="<?php echo esc_url(get_category_link(get_category_by_slug('uncategorized')->term_id)); ?>">uncategorized</a>
+                  <a href="<?php echo esc_html($hero_button_link); ?>">Bliv medlem af Tidslerne</a>
                 </li>
                 <li class="px-6 py-2 text-sm">
-                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('hvem-er-tidslerne'))); ?>">Hvem er Tidslerne</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('videobiblioteket'))); ?>">Videobiblioteket</a>
                 </li>
               </ul>
             </li>
@@ -103,10 +112,10 @@
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
                 <li class="px-6 py-2 text-sm">
-                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory1')); ?>">subcategory1</a>
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('kommende-arrangementer'))); ?>">Kommende arrangementer</a>
                 </li>
                 <li class="px-6 py-2 text-sm">
-                  <a href="<?php echo esc_url(home_url('/arrangementer/subcategory2')); ?>">subcategory2</a>
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('tidligere-arrangementer'))); ?>">Tidligere arrangementer</a>
                 </li>
               </ul>
             </li>

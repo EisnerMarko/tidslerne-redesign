@@ -14,7 +14,7 @@
 
   <div id="preloader">
     <video autoplay muted playsinline>
-      <source src="<?php echo get_template_directory_uri(); ?>/css/img/logo-animation-final.mp4" type="video/mp4" />
+      <source src="<?php echo get_template_directory_uri(); ?>/css/img/logo-animation-last.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>

@@ -14,7 +14,7 @@
         $selected_cat_slug = isset($_GET['cat']) && $_GET['cat'] ? sanitize_text_field($_GET['cat']) : ($current_category && property_exists($current_category, 'slug') ? $current_category->slug : '');
 
         $args = array(
-          'posts_per_page' => 12,
+          'posts_per_page' => -1,
           'orderby' => 'date',
           'order' => $order,
         );

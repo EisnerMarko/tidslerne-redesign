@@ -12,10 +12,10 @@
 </head>
 <body <?php body_class(); ?> class="w-full h-full">
 
-  <div id="preloader">
-    <video autoplay muted playsinline>
+  <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
+    <video id="preloader-video" autoplay muted loop playsinline class="min-w-[400px] min-h-[400px] w-full h-full max-w-[900px] max-h-[900px]">
       <source src="<?php echo get_template_directory_uri(); ?>/css/img/logo-animation-last.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
+        Your browser does not support the video tag.
     </video>
   </div>
 
@@ -35,7 +35,7 @@
       </button>
 
       <nav id="side-menu" class="fixed top-0 left-0 w-93 h-full bg-white z-50 hidden transform -translate-x-full transition-transform duration-300">
-          <div class="flex items-center justify-between px-4 py-4">
+          <div class="flex items-center justify-between px-4 py-4"> 
 
             <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">
               <img src="<?php echo esc_url(get_template_directory_uri() . '/css/img/tidslerne_logo.png'); ?>" alt="Tidslerne Logo" class="h-8 w-auto">

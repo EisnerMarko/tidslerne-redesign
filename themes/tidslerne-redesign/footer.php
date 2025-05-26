@@ -4,7 +4,7 @@
           <div class="sm:w-1/3 text-center flex flex-col items-center">
             <img src="<?php echo esc_url(get_template_directory_uri() . '/css/img/tidslerne_logo_white.png'); ?>" alt="Tidslerne Logo" class="mb-4 h-16 w-auto">
             <p class="text-sm leading-relaxed px-4 lg:px-14 mb-8">
-              Kræftforeningen Tidslerne er en forening for tidligere og nuværende kræftpatienter samt deres pårørende og i øvrigt enhver, der ønsker at støtte et forum for samspillet mellem den konventionelle og alternative behandling af kræftsyge mennesker. Vi tæller ca 2.200 medlemmer primo 2022. Foreningen er  finansieret ved tilskud fra fonde, puljemidler samt medlemsbidrag i form af kontingenter, frivillige bidrag og arv.
+              Kræftforeningen Tidslerne er en forening for tidligere og nuværende kræftpatienter, deres pårørende samt alle andre, der ønsker at støtte et forum for samspillet mellem konventionel og alternativ behandling af mennesker med kræft. Vi har flere tusinde medlemmer.
             </p>
           </div>
 
@@ -47,6 +47,6 @@
         </div>
       </footer>
     </div>
-    <?php wp_footer(); //need to fix for ipad?>
+    <?php wp_footer(); ?>
 </body>
 </html>

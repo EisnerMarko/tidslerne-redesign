@@ -1,11 +1,20 @@
 window.addEventListener('load', function () {
   const preloader = document.getElementById('preloader');
   const mainContent = document.getElementById('main-site');
-  preloader.style.opacity = '0';
-  setTimeout(() => {
-    preloader.style.display = 'none';
-    mainContent.style.display = 'block';
-  }, 500);
+  if (preloader) {
+    setTimeout(() => {
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        if (mainContent) mainContent.style.display = 'block';
+        const video = document.getElementById('preloader-video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }, 400); // allow fade out
+    }, 1000); // 10 seconds for testing
+  }
 });
 
 document.getElementById('search-toggle').onclick = function() {

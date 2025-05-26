@@ -114,7 +114,7 @@
         </section>
 
         <section class="container mx-auto px-4 py-8">
-          <h2 class="text-2xl sm:text-3xl font-bold text-[#9B2D5C] mb-2">Current Events</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#9B2D5C] mb-2">Aktuelle arrangementer</h2>
           <div class="border-b-2 border-[#9B2D5C] mb-8"></div>
           <div class="flex flex-col gap-8">
             <?php

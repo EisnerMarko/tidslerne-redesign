@@ -40,7 +40,7 @@
           </div>
 
           <div class="flex items-center justify-center lg:mr-32">
-            <a href="#" class="cursor-pointer">
+            <a href="https://tojkurven.dk/?s=tidslerne&post_type=product" target="_blank" class="cursor-pointer">
               <img src="<?php echo esc_url(get_template_directory_uri() . '/css/img/merch_tidslerne.png'); ?>" alt="Merchandise" class="w-auto h-65">
             </a>
           </div>

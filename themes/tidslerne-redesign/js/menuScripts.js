@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
         video.pause();
         video.currentTime = 0;
       }
-    }, 400); // allow fade out
+    }, 300);
   }
 });
 

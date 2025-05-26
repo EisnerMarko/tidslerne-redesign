@@ -8,12 +8,13 @@
   <title><?php bloginfo("name"); ?></title>
   <meta name="description" content="<?php bloginfo("description"); ?>">
   <link rel="icon" href="<?php echo get_template_directory_uri() . '/css/img/tidslerne_logo_white_square.png' ?>" type="image/png">
+  <link rel="preload" as="video" href="<?php echo get_template_directory_uri(); ?>/css/img/logo-animation-last.mp4" type="video/mp4">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> class="w-full h-full">
 
   <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
-    <video id="preloader-video" autoplay muted loop playsinline class="min-w-[400px] min-h-[400px] w-full h-full max-w-[900px] max-h-[900px]">
+    <video id="preloader-video" autoplay muted loop playsinline preload="auto" class="min-w-[400px] min-h-[400px] w-full h-full max-w-[900px] max-h-[900px]">
       <source src="<?php echo get_template_directory_uri(); ?>/css/img/logo-animation-last.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
@@ -62,10 +63,13 @@
                   <a href="<?php echo esc_url(get_permalink(get_page_by_path('hvem-er-tidslerne'))); ?>">Hvem er Tidslerne</a>
                 </li>
                 <li class="px-6 py-2 text-sm">
-                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('videobiblioteket'))); ?>">Videobiblioteket</a>
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('bestyrelsen'))); ?>">Bestyrelsen</a>
                 </li>
                 <li class="px-6 py-2 text-sm">
                   <a href="<?php echo esc_url(get_permalink(get_page_by_path('donations'))); ?>">Donationer, gavebidrag og skattefradrag</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('videobiblioteket'))); ?>">Videobiblioteket</a>
                 </li>
               </ul>
             </li>
@@ -139,6 +143,9 @@
                 <span id="dropdown-arrow" class="iconify text-black text-lg" data-icon="mdi:chevron-down"></span>
               </button>
               <ul id="dropdown-menu" class="hidden overflow-hidden transition-all duration-300 ease-in-out flex flex-col bg-[#9B2D5C] text-white">
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('legater'))); ?>">Legater</a>
+                </li>
                 <li class="px-6 py-2 text-sm">
                   <a href="<?php echo esc_url(get_permalink(get_page_by_path('policy'))); ?>">Vedtægter</a>
                 </li>

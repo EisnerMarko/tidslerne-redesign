@@ -20,7 +20,7 @@
             </div>
             <div class="w-full md:w-3/5 flex flex-col items-center justify-center text-center min-h-full h-full">
               <?php if ($hero_headline): ?>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-green-600 mb-4 leading-tight">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#9B2D5C] mb-4 leading-tight">
                   <?php echo esc_html($hero_headline); ?>
                 </h1>
               <?php endif; ?>

@@ -54,6 +54,9 @@
                 <li class="px-6 py-2 text-sm">
                   <a href="<?php echo esc_url(get_permalink(get_page_by_path('videobiblioteket'))); ?>">Videobiblioteket</a>
                 </li>
+                <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('donations'))); ?>">Donationer, gavebidrag og skattefradrag</a>
+                </li>
               </ul>
             </li>
 
@@ -145,7 +148,7 @@
 
       <a href="<?php echo is_user_logged_in() ? esc_url(home_url('/user')) : esc_url(home_url('/login')); ?>">
         <button class="h-8 w-24 sm:w-36 bg-[#9B2D5C] rounded-lg flex items-center justify-center text-white text-sm font-bold cursor-pointer hover:bg-[#7a2348] transition">
-          Log In
+          <?php echo is_user_logged_in() ? 'Min profil' : 'Log ind'; ?>
         </button>
       </a>
 

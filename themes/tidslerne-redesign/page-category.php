@@ -89,7 +89,7 @@
                         preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
                         if (!empty($matches[1])) :
                       ?>
-                        <img src="<?php echo esc_url($matches[1]); ?>" class="w-full h-54 object-cover" alt="">
+                        <img src="<?php echo esc_url($matches[1]); ?>" class="w-full h-54 object-cover transition-transform duration-300 ease-in-out transform hover:scale-105" alt="">
                       <?php else : ?>
                         <div class="w-full h-54 bg-gray-300"></div>
                       <?php endif; ?>

@@ -40,7 +40,7 @@
                 ?>
                 <div class="bg-white flex flex-col md:flex-row items-stretch">
                   <div class="md:w-1/3 flex-shrink-0 flex items-center justify-center bg-gray-200 min-h-[150px]">
-                      <img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt'] ?? 'Event image'); ?>" class="w-full h-full object-cover" />
+                      <img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt'] ?? 'Event image'); ?>" class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105" />
                   </div>
                   <div class="md:w-2/3 flex flex-col md:flex-row flex-1">
                     <div class="flex-1 px-6 py-4">

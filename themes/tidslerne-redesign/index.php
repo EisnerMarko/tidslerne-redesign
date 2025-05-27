@@ -196,10 +196,10 @@
         <section class="bg-[#9B2D5C] py-16 px-8">
           <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div class="flex-1 mb-2 md:mb-0 px-4 md:px-0">
-              <h2 class="text-3xl font-bold text-white mb-6">JOIN US!</h2>
+              <h2 class="text-3xl font-bold text-white mb-6">Abonner på nyheder!</h2>
               <p class="text-lg text-white mb-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates sunt voluptate alias consectetur voluptatem praesentium quae perspiciatis, sequi quidem, cumque amet porro eligendi quos dolorem fugiat quod ducimus quas incidunt!<br>
-                <span class="font-bold">SIGN UP TO RECEIVE UPDATES ON OUR CAMPAIGNS.</span>
+                Tilmeld dig vores nyhedsbrev og få opdateringer om arrangementer, kampagner og nyt fra Tidslerne direkte i din indbakke. Vi deler spændende historier, vigtige nyheder og gode tilbud, så du altid er opdateret på, hvad der sker i foreningen. 
+                <br><span class="font-bold uppercase">På den måde går du ikke glip af noget – vær en del af fællesskabet og få de seneste nyheder først!</span>
               </p>
             </div>
             <div class="flex-1">

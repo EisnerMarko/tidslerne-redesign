@@ -9,7 +9,7 @@
           </div>
 
           <div class="sm:w-1/3 text-center lg:text-left mb-8 lg:mb-0 lg:mr-12 flex flex-col items-center">
-            <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
+            <h3 class="text-3xl font-bold mb-4">Kontakt os</h3>
             <ul class="space-y-2 text-sm">
               <li class="flex items-center">
                 <span class="iconify mr-2 text-2xl" data-icon="fluent:location-12-regular"></span>

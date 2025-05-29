@@ -69,6 +69,9 @@
                   <a href="<?php echo esc_url(get_permalink(get_page_by_path('donations'))); ?>">Donationer, gavebidrag og skattefradrag</a>
                 </li>
                 <li class="px-6 py-2 text-sm">
+                  <a href="<?php echo esc_url(get_permalink(get_page_by_path('billedgalleri'))); ?>">Billedgalleri</a>
+                </li>
+                <li class="px-6 py-2 text-sm">
                   <a href="<?php echo esc_url(get_permalink(get_page_by_path('videobiblioteket'))); ?>">Videobiblioteket</a>
                 </li>
               </ul>
